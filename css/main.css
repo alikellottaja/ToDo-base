@@ -64,11 +64,11 @@ header {
 }
 
 .todo-section input {
-  padding: 15px;
+  padding: 14px;
   float: left;
   width: 75%;
   font-size: 1em;
-  border: none;
+  border-width: 0;
 }
 
 .todo-section .add-item-btn {
