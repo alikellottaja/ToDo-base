@@ -145,3 +145,53 @@ header{
         }
     }
 }
+
+.timer-section {
+    text-align: center;
+
+    .timer-btn {
+        background-color: color(accent);
+        color: color(primary-text);
+        margin: 0;
+        width: 100%;
+    }
+}
+
+.timer {
+    background-color: #fff;
+    color: color(dark-text);
+    text-align: center;
+
+    p {
+        font-size: 2em;
+        padding: 15px;
+        margin: 0;
+        font-weight: 700;
+        background-color: darken(color(primary-text), 5%);
+    }
+    h4 {
+        margin: 0;
+        padding: 20px;
+    }
+    #start-timer {
+        width: 33%;
+        float: left;
+    }
+    #stop-timer {
+        width: 33%;
+        float: left;
+    }
+    #reset-timer {
+        width: 33%;
+        float: left;
+    }
+    .unclickable {
+        pointer-events: none;
+        cursor: not-allowed;
+        background-color: rgb(87, 87, 87);
+    }
+
+    .btn:hover{
+        background-color: lighten(color(accent), 5%);
+    }
+}

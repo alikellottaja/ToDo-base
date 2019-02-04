@@ -143,4 +143,59 @@ header {
   height: 15px;
   width: 7px;
 }
+
+.timer-section {
+  text-align: center;
+}
+
+.timer-section .timer-btn {
+  background-color: #C14953;
+  color: #EFEFEF;
+  margin: 0;
+  width: 100%;
+}
+
+.timer {
+  background-color: #fff;
+  color: #3b3b3b;
+  text-align: center;
+}
+
+.timer p {
+  font-size: 2em;
+  padding: 15px;
+  margin: 0;
+  font-weight: 700;
+  background-color: #e2e2e2;
+}
+
+.timer h4 {
+  margin: 0;
+  padding: 20px;
+}
+
+.timer #start-timer {
+  width: 33%;
+  float: left;
+}
+
+.timer #stop-timer {
+  width: 33%;
+  float: left;
+}
+
+.timer #reset-timer {
+  width: 33%;
+  float: left;
+}
+
+.timer .unclickable {
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: #575757;
+}
+
+.timer .btn:hover {
+  background-color: #c75c65;
+}
 /*# sourceMappingURL=main.css.map */
