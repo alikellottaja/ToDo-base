@@ -7,6 +7,8 @@ let counter = 0;
 let startDate;
 let time;
 let timeBank;
+let startTime;
+let endTime;
 
 
 function timer() {
@@ -41,21 +43,26 @@ function startTimer() {
     startTimerBtn.classList.add('unclickable');
     stopTimerBtn.classList.remove('unclickable');
     // timerP.innerHTML = startTime;
+    if(!timeBank){
+        startTime = startDate;
+    }
 }
 
 function stopTimer() {
     clearInterval(timerId);
+    endTime = new Date;
     if (timeBank) {
-        timeBank = timeBank + time;
+        timeBank = timeBank + Math.round(time);
         console.log('Stopping, was bank');
     } else {
-        timeBank = time;
+        timeBank = Math.round(time);
         console.log('Stopping, no bank');
     }
     counter = 0;
     console.log(timeBank);
     startTimerBtn.classList.remove('unclickable');
     stopTimerBtn.classList.add('unclickable');
+    saveTime();
 }
 
 function resetTimer() {
@@ -66,6 +73,26 @@ function resetTimer() {
         startDate = new Date;
         timerP.innerHTML = '0';
     }
+}
+
+function saveTime(){
+    const data = {
+        'start_time': startTime.toLocaleString('fi-FI'),
+        'end_time': endTime.toLocaleString('fi-FI'),
+        'time_worked': timeBank,
+        'time_worked_formated': formatTime(timeBank),
+        'time_rounded': roundTime(timeBank),
+        'time_rounded:formated': formatTime(roundTime(timeBank))
+    }
+    console.log(data)
+}
+
+function roundTime(t){
+    const temp = Math.floor(t/900);
+    const vajaa = 1 - ((t/900) - temp);
+    const toAdd = Math.round(900 * vajaa);
+    const roundedTime = toAdd + t;
+    return roundedTime;
 }
 
 startTimerBtn.addEventListener('click', startTimer, false);
